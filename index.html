@@ -3,41 +3,680 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Erfaneh Hosseini</title>
+
+    <title>Erfaneh Hosseini | Computer Engineering & Computational Neuroscience</title>
+
+    <meta
+        name="description"
+        content="Erfaneh Hosseini - Computer Engineering student interested in Computational Neuroscience, AI, and Machine Learning."
+    >
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.7;
+            color: #1f2937;
+            background: #ffffff;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            width: min(1050px, 90%);
+            margin: auto;
+        }
+
+        /* Navigation */
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.94);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .nav-container {
+            width: min(1050px, 90%);
+            margin: auto;
+            height: 64px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 24px;
+            list-style: none;
+            font-size: 0.92rem;
+        }
+
+        .nav-links a {
+            color: #4b5563;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            color: #111827;
+        }
+
+        /* Hero */
+
+        .hero {
+            min-height: 88vh;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-content {
+            max-width: 820px;
+        }
+
+        .eyebrow {
+            color: #6b7280;
+            font-size: 0.95rem;
+            margin-bottom: 14px;
+            letter-spacing: 0.04em;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.8rem, 7vw, 5.2rem);
+            line-height: 1.05;
+            letter-spacing: -0.04em;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #4b5563;
+        }
+
+        .hero-description {
+            max-width: 700px;
+            font-size: 1.2rem;
+            color: #4b5563;
+            margin-bottom: 30px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 11px 18px;
+            border-radius: 8px;
+            border: 1px solid #d1d5db;
+            transition: all 0.2s ease;
+        }
+
+        .button.primary {
+            background: #111827;
+            color: white;
+            border-color: #111827;
+        }
+
+        .button:hover {
+            transform: translateY(-1px);
+        }
+
+        /* Sections */
+
+        section {
+            padding: 90px 0;
+            border-top: 1px solid #f0f0f0;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            letter-spacing: -0.02em;
+        }
+
+        .section-text {
+            max-width: 800px;
+            color: #4b5563;
+            font-size: 1.05rem;
+        }
+
+        /* Research */
+
+        .research-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+            margin-top: 30px;
+        }
+
+        .research-card {
+            padding: 24px;
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            background: #fafafa;
+        }
+
+        .research-card h3 {
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+
+        .research-card p {
+            color: #6b7280;
+            font-size: 0.95rem;
+        }
+
+        /* Projects */
+
+        .project {
+            padding: 28px 0;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .project:last-child {
+            border-bottom: none;
+        }
+
+        .project h3 {
+            font-size: 1.25rem;
+            margin-bottom: 8px;
+        }
+
+        .project p {
+            color: #6b7280;
+            max-width: 800px;
+            margin-bottom: 12px;
+        }
+
+        .project-link {
+            font-size: 0.92rem;
+            font-weight: 600;
+        }
+
+        /* Experience */
+
+        .timeline-item {
+            padding: 22px 0;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .timeline-item h3 {
+            margin-bottom: 4px;
+        }
+
+        .timeline-item .meta {
+            color: #6b7280;
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+        }
+
+        /* Skills */
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 25px;
+        }
+
+        .skill {
+            padding: 8px 13px;
+            border: 1px solid #d1d5db;
+            border-radius: 999px;
+            font-size: 0.9rem;
+            color: #4b5563;
+        }
+
+        /* Contact */
+
+        .contact-links {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 25px;
+        }
+
+        .contact-links a {
+            text-decoration: underline;
+            text-underline-offset: 4px;
+        }
+
+        /* Footer */
+
+        footer {
+            padding: 35px 0;
+            border-top: 1px solid #e5e7eb;
+            color: #6b7280;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+
+        @media (max-width: 700px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero {
+                min-height: 75vh;
+            }
+
+            .research-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 65px 0;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-    <h1>Erfaneh Hosseini</h1>
+    <!-- Navigation -->
 
-    <p>
-        Computer Engineering Student interested in
-        Computational Neuroscience, AI, and Machine Learning.
-    </p>
+    <nav>
+        <div class="nav-container">
 
-    <h2>About Me</h2>
-    <p>
-        I am a Computer Engineering student interested in
-        computational approaches to neuroscience and intelligent systems.
-    </p>
+            <a href="#" class="logo">
+                Erfaneh Hosseini
+            </a>
 
-    <h2>Research Interests</h2>
-    <ul>
-        <li>Computational Neuroscience</li>
-        <li>Machine Learning</li>
-        <li>Neural Signal Analysis</li>
-        <li>Artificial Intelligence</li>
-    </ul>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#research">Research</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
 
-    <h2>Projects</h2>
-    <p>
-        Multi-Agent Project Manager
-    </p>
+        </div>
+    </nav>
 
-    <h2>Links</h2>
-    <p>
-        <a href="https://github.com/Erfaneh2003">GitHub</a>
-    </p>
+
+    <!-- Hero -->
+
+    <main>
+
+        <section class="hero">
+            <div class="container">
+
+                <div class="hero-content">
+
+                    <p class="eyebrow">
+                        Computer Engineering · AI · Computational Neuroscience
+                    </p>
+
+                    <h1>
+                        Erfaneh<br>
+                        <span>Hosseini</span>
+                    </h1>
+
+                    <p class="hero-description">
+                        Computer Engineering student interested in computational
+                        approaches to neural activity, cognitive processes,
+                        and intelligent systems.
+                    </p>
+
+                    <div class="buttons">
+
+                        <a
+                            href="CV.pdf"
+                            class="button primary"
+                            target="_blank"
+                        >
+                            View CV
+                        </a>
+
+                        <a
+                            href="https://github.com/Erfaneh2003"
+                            class="button"
+                            target="_blank"
+                        >
+                            GitHub
+                        </a>
+
+                        <a
+                            href="#contact"
+                            class="button"
+                        >
+                            Contact
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- About -->
+
+        <section id="about">
+
+            <div class="container">
+
+                <h2 class="section-title">
+                    About
+                </h2>
+
+                <p class="section-text">
+                    I am a Computer Engineering student with an interest in
+                    Computational Neuroscience, Artificial Intelligence,
+                    and Machine Learning. My interests lie at the intersection
+                    of computational modeling, neural signals, cognitive
+                    processes, and intelligent systems.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- Research -->
+
+        <section id="research">
+
+            <div class="container">
+
+                <h2 class="section-title">
+                    Research Interests
+                </h2>
+
+                <div class="research-grid">
+
+                    <div class="research-card">
+                        <h3>Computational Neuroscience</h3>
+                        <p>
+                            Computational approaches for studying neural
+                            activity and cognitive processes.
+                        </p>
+                    </div>
+
+                    <div class="research-card">
+                        <h3>Neural Signal Analysis</h3>
+                        <p>
+                            Computational methods for analyzing and modeling
+                            neural signals.
+                        </p>
+                    </div>
+
+                    <div class="research-card">
+                        <h3>Machine Learning</h3>
+                        <p>
+                            Machine learning methods for biological,
+                            neural, and intelligent systems.
+                        </p>
+                    </div>
+
+                    <div class="research-card">
+                        <h3>AI & Intelligent Systems</h3>
+                        <p>
+                            AI agents, multi-agent systems, and
+                            neuroscience-inspired intelligent systems.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Projects -->
+
+        <section id="projects">
+
+            <div class="container">
+
+                <h2 class="section-title">
+                    Selected Projects
+                </h2>
+
+
+                <div class="project">
+
+                    <h3>
+                        Multi-Agent Project Manager
+                    </h3>
+
+                    <p>
+                        A multi-agent project management system designed
+                        with FastAPI and LangGraph. The system combines
+                        agent-based analysis with deterministic validation,
+                        task allocation, and scheduling logic.
+                    </p>
+
+                    <a
+                        class="project-link"
+                        href="https://github.com/Erfaneh2003/multi-agent-project-manager"
+                        target="_blank"
+                    >
+                        View on GitHub →
+                    </a>
+
+                </div>
+
+
+                <div class="project">
+
+                    <h3>
+                        Computational Neuroscience Hub
+                    </h3>
+
+                    <p>
+                        An educational and collaborative initiative focused
+                        on computational neuroscience and learning resources.
+                    </p>
+
+                    <a
+                        class="project-link"
+                        href="https://github.com/Erfaneh2003"
+                        target="_blank"
+                    >
+                        GitHub Profile →
+                    </a>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- Experience -->
+
+        <section id="experience">
+
+            <div class="container">
+
+                <h2 class="section-title">
+                    Experience
+                </h2>
+
+
+                <div class="timeline-item">
+
+                    <h3>
+                        AI Engineering Intern
+                    </h3>
+
+                    <p class="meta">
+                        Nexus Workplace AI · 2025–2026
+                    </p>
+
+                    <p class="section-text">
+                        Worked on AI agents and backend systems using
+                        Python, FastAPI, LangChain, and LangGraph.
+                    </p>
+
+                </div>
+
+
+                <div class="timeline-item">
+
+                    <h3>
+                        Teaching Assistant
+                    </h3>
+
+                    <p class="meta">
+                        IAUN · Engineering Mathematics
+                    </p>
+
+                    <p class="section-text">
+                        Assisted students in Engineering Mathematics
+                        courses and problem-solving sessions.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Education -->
+
+        <section id="education">
+
+            <div class="container">
+
+                <h2 class="section-title">
+                    Education
+                </h2>
+
+                <div class="timeline-item">
+
+                    <h3>
+                        B.Sc. Computer Engineering
+                    </h3>
+
+                    <p class="meta">
+                        Islamic Azad University, Najafabad Branch
+                    </p>
+
+                    <p class="section-text">
+                        Software Engineering · 2023–2026
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Skills -->
+
+        <section>
+
+            <div class="container">
+
+                <h2 class="section-title">
+                    Technical Skills
+                </h2>
+
+                <div class="skills">
+
+                    <span class="skill">Python</span>
+                    <span class="skill">C++</span>
+                    <span class="skill">Java</span>
+                    <span class="skill">FastAPI</span>
+                    <span class="skill">LangGraph</span>
+                    <span class="skill">LangChain</span>
+                    <span class="skill">SQL</span>
+                    <span class="skill">PostgreSQL</span>
+                    <span class="skill">SQLAlchemy</span>
+                    <span class="skill">Docker</span>
+                    <span class="skill">Git</span>
+                    <span class="skill">Machine Learning</span>
+                    <span class="skill">Computational Neuroscience</span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Contact -->
+
+        <section id="contact">
+
+            <div class="container">
+
+                <h2 class="section-title">
+                    Contact
+                </h2>
+
+                <p class="section-text">
+                    I am interested in research opportunities,
+                    collaborations, and projects at the intersection
+                    of AI, computational neuroscience, and intelligent systems.
+                </p>
+
+                <div class="contact-links">
+
+                    <a
+                        href="https://github.com/Erfaneh2003"
+                        target="_blank"
+                    >
+                        GitHub
+                    </a>
+
+                    <a
+                        href="https://www.linkedin.com/"
+                        target="_blank"
+                    >
+                        LinkedIn
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        <div class="container">
+
+            © 2026 Erfaneh Hosseini
+
+        </div>
+
+    </footer>
 
 </body>
 </html>
